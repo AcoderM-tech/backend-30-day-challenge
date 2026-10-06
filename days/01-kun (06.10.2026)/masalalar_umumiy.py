@@ -65,9 +65,49 @@ if "__main__" == __name__:
 # -----------------
 # python           3
 # men              2
-# Counter ishlatmang, lug'atni o'zingiz to('ldiring.'
-#==================================================================================)
+#==================================================================================
+def list_tozala(royxat):
+    """Bu funksiya kirilgan dict elementlarini space va belgilardan tozalaydi,oxirida lower qilib toza dictni qaytaradi"""
+    toza_royxat = []
+    for element in royxat:
+        toza_soz = ""
+        for harf in element:
+            if harf in string.punctuation:
+                continue
+            if harf.isdigit():
+                continue
+            if harf.isspace():
+                continue
+            toza_soz += harf
+        toza_royxat.append(toza_soz.lower())
 
+    return toza_royxat
+def sozlar_soni(royxat):
+    toza_royxat=list_tozala(royxat)
+    tekshirilganlar=[]
+    natija={}
+    for asl_soz,soz in zip(royxat,toza_royxat):
+        soni=0
+        if soz in tekshirilganlar:
+            continue
+        else:
+            tekshirilganlar.append(soz)
+        for soz2 in toza_royxat:
+            if soz==soz2:
+                soni+=1
+        natija[asl_soz]=soni
+
+    return natija
+test_list = [
+    "  Salom123!",
+    "Bu_matn_da2026",
+    "Py@th*on  ",
+    "salom...",
+    "Bu_matn_da!!!",
+    "  PY@TH*ON",
+    "python123"
+]
+print(sozlar_soni(test_list))
 
 #===================================================================================
 #3. Tub sonlar va rekursiya (funksiya, for ... else, rekursiya)
@@ -107,5 +147,6 @@ if "__main__" == __name__:
 # Vali       70               70.0      C
 # Baho funksiyasi: 90+ A, 80+ B, 70+ C, 60+ D, qolgani F.
 #====================================================================================
+
 
 
