@@ -1,3 +1,41 @@
+#=======================================================================================
+try:
+    a = int(input("Sonni kiriting: "))
+    if a < 2:
+        raise ValueError("Son 2 yoki undan katta bo'lishi kerak")
+except ValueError as ve:
+    print(f"Xatolik: {ve}")
+else:
+    for i in range(2, int(a ** 0.5) + 1):
+        if a % i == 0:
+            print(f"{a} soni tub emas")
+            break
+    else:
+        print(f"{a} soni tub")
+#========================================================================================
+sonlar=[]
+
+while True:
+    a=input("Sonni kiriting (to'xtatish uchun stop):").strip().lower()
+    if a=="stop":
+        break
+    try:
+        a = float(a)
+        sonlar.append(a)
+    except ValueError as ve:
+        print(f"Xatolik:{ve}")
+if sonlar:
+    yigindi = sum(sonlar)
+    ortacha = yigindi / len(sonlar)
+    print(f"\nSonlar soni: {len(sonlar)}")
+    print(f"Yig'indi: {yigindi:g}")
+    print(f"O'rtacha: {ortacha:.2f}")
+else:
+    print("Hech narsa kiritilmadi")
+
+#===============================================================================================
+
+
 # ================================================================
 #1 dan 100 gacha juft sonlar yig'indisini topishni sodda versiyasi
 s=0
