@@ -7,6 +7,8 @@
 # parol_tekshir("Salom1234")  # []
 #============================================================================================
 import string
+
+
 def parol_tekshir(matn):
     """Bu funksiya berilgan parolni quyidagi qoidalarga zid emasligini tekshiradi :
     Qoidalar: 8+ belgi, kamida bitta raqam, katta harf, kichik harf, bo'sh joy yo'q."""
@@ -15,28 +17,28 @@ def parol_tekshir(matn):
     kattaharf = False
     kichkinaharf = False
     bosh_joy_bor = False
-    xatolar=[]
+    xatolar = []
     if not matn:
-            xatolar.append("Parol mavjud emas !")
-            return xatolar
+        xatolar.append("Parol mavjud emas !")
+        return xatolar
 
-    if len(matn)<8:
-            xatolar.append("Parol uzunligi kamida 8 ta belgidan iborat bo'lishi kerak!!")
+    if len(matn) < 8:
+        xatolar.append("Parol uzunligi kamida 8 ta belgidan iborat bo'lishi kerak!!")
     for i in matn:
-            if i.isspace():
-                bosh_joy_bor=True
-            if i.isdigit():
-                raqam=True
-            if i in string.punctuation:
-                belgi = True
-            if i.isupper():
-                kattaharf=True
-            if i.islower():
-                kichkinaharf=True
+        if i.isspace():
+            bosh_joy_bor = True
+        if i.isdigit():
+            raqam = True
+        if i in string.punctuation:
+            belgi = True
+        if i.isupper():
+            kattaharf = True
+        if i.islower():
+            kichkinaharf = True
     if not raqam:
-            xatolar.append("Parol tarkibida raqam mavjud emas!!")
+        xatolar.append("Parol tarkibida raqam mavjud emas!!")
     if not belgi:
-            xatolar.append("Parol tarkibida belgi mavjud emas!")
+        xatolar.append("Parol tarkibida belgi mavjud emas!")
     if not kattaharf and not kichkinaharf:
         xatolar.append("Parol tarkibida harf mavjud emas!")
     else:
@@ -45,8 +47,10 @@ def parol_tekshir(matn):
         if not kichkinaharf:
             xatolar.append("Parol tarkibida kichkinaharf mavjud emas!!")
     if bosh_joy_bor:
-            xatolar.append("Parol bo'sh joy mavjud bo'lmasligi kerak !!!")
+        xatolar.append("Parol bo'sh joy mavjud bo'lmasligi kerak !!!")
     return xatolar
+
+
 #tekshiruv
 if "__main__" == __name__:
     print(parol_tekshir(""))
@@ -56,6 +60,7 @@ if "__main__" == __name__:
     print(parol_tekshir("KattaVaKichikHarf"))
     print(parol_tekshir("12345678!!!"))
     print(parol_tekshir("Uzbekistan_2026!"))
+
 
 #==================================================================================
 # 2. So'z hisoblagich (lug'at, tsikl, saralash)
@@ -82,22 +87,25 @@ def list_tozala(royxat):
         toza_royxat.append(toza_soz.lower())
 
     return toza_royxat
+
 def sozlar_soni(royxat):
-    toza_royxat=list_tozala(royxat)
-    tekshirilganlar=[]
-    natija={}
-    for asl_soz,soz in zip(royxat,toza_royxat):
-        soni=0
+    toza_royxat = list_tozala(royxat)
+    tekshirilganlar = []
+    natija = {}
+    for asl_soz, soz in zip(royxat, toza_royxat):
+        soni = 0
         if soz in tekshirilganlar:
             continue
         else:
             tekshirilganlar.append(soz)
         for soz2 in toza_royxat:
-            if soz==soz2:
-                soni+=1
-        natija[asl_soz]=soni
+            if soz == soz2:
+                soni += 1
+        natija[asl_soz] = soni
 
     return natija
+
+
 test_list = [
     "  Salom123!",
     "Bu_matn_da2026",
@@ -147,6 +155,3 @@ print(sozlar_soni(test_list))
 # Vali       70               70.0      C
 # Baho funksiyasi: 90+ A, 80+ B, 70+ C, 60+ D, qolgani F.
 #====================================================================================
-
-
-
