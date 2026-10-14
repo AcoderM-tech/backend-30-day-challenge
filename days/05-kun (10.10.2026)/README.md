@@ -25,19 +25,11 @@ Bugun Python'da **Ob’yektga yo’naltirilgan dasturlash (OOP)**ning 4 ta asosi
 * **`Polymorphism.py`**: Ota klassi bo'lmagan, lekin bir xil `ovoz()` va `harakat()` metodlariga ega `Mushuk`, `It`, `Qush` va `Robot` klasslari. `konsert` funksiyasi orqali ularni turini tekshirmasdan boshqarish va `AttributeError` ni `TypeError` ga o'zgartirish.
 * **`test.py`**: Konsert funksiyasining ishlashi va noto'g'ri obyekt berilganda xatolarni ushlashini tekshiruvchi testlar.
 
-### 4. Abstraksiya (`Abstraction/`)
-* **`Abstraction.py`**: `Tolov` ota klassi (`NotImplementedError` bilan) va uning mantiqini davom ettiruvchi `Naqd`, `Karta`, hamda `Komissiyali` to'lov turlari.
-* **`test.py`**: Turli to'lov usullarini va komissiya hisoblash jarayonlarini tekshiruvchi testlar.
-
----
-
 ## 📂 Kunlik Kodlar strukturasi
 
 ```
 05-kun (10.10.2026)/
-├── Abstraction/
-│   ├── Abstraction.py   # To'lov tizimlari abstraksiya mantiqi
-│   └── test.py          # Abstraksiya testlari
+
 ├── Encapsulation/
 │   ├── Encapsulation.py # Seyf klassi va inqapsulatsiya
 │   └── test.py          # Seyf xavfsizlik testlari
